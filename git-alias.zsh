@@ -3,6 +3,13 @@
 # git 短縮コマンド
 # 
 ###########################################################################
+# 
+# おそらく Vegeoku を引き継いだ人へのメッセージ (by Messy439):
+#
+# これぶっちゃけ引き継いだ人好みによって変えてもいいです
+# 略し方が正直結構賛否両論ありそうなんで
+#
+###########################################################################
 
 
 # 一応。
@@ -20,16 +27,17 @@ alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gcam='git commit --amend -m'
 
-# 空コミット許容 (主に git init の後によくやる)
-alias gce='git commit --allow-empty'
-
 # ステージングステータス確認用
 alias gs='git status'
 
 # 現在のブランチ確認用 (git 版 pwd みたいなもん)
 alias gb='git branch'
 # ブランチの最終コミット内容メッセージも一緒に確認できるやつ
-alias gbv='git branch -v'
+alias gbv='git branch -vv'
+# ローカル & リモートブランチ確認用
+alias gba='git branch -a'
+# リモートブランチ確認用
+alias gbr='git branch -r'
 
 # コミット履歴確認用
 alias gl='git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset"'
@@ -73,7 +81,7 @@ alias grxh='git reset --mixed HEAD^'
 alias grvh='git revert HEAD'
 
 # リモートリポジトリと連動 (GitHub とか)
-alias grm='git remote'
+alias gr='git remote'
 
 # git の操作履歴確認用
 # 一応 git reset --hard HEAD@{N} で操作履歴ベースで元に戻ることもできる
@@ -102,13 +110,21 @@ alias gf='git fetch'
 alias gpl='git pull'
 
 # git 自体の設定
-# e.g. (gconf user.name 'vegeoku-dev')
-alias gconf='git config'
+# e.g. (gcf user.name 'vegeoku-dev')
+alias gcf='git config'
 # グローバル設定用
-alias gconfg='git config --global'
+alias gcfg='git config --global'
+
+# 設定一覧確認用
+alias gcfl='git config -l'
+alias gcfgl='git config --global -l'
 
 # 主にリモートリポジトリの内容引っ張ってくるときに使う
 alias gcl='git clone'
+
+# git にファイルの移動や削除を記録させるためのコマンド
+alias gmv='git mv'
+alias grm='git rm'
 
 # このファイルの内容確認用
 alias gg='cat ~/zsh-setup/git-alias.zsh | grep alias'
